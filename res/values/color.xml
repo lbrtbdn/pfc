@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="estat_nova">#33b5e5</color>
+    <color name="estat_en_progres">#aa66cc</color>
+    <color name="estat_tancada">#99cc00</color>
+    
+</resources>
