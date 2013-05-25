@@ -15,25 +15,25 @@ import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Activity which displays a login screen to the user, offering registration as
  * well.
  */
 public class LoginActivity extends Activity {
-	public static final String PARAM_NOMBRE = "nombre o k ase";
 
 	/**
 	 * A dummy authentication store containing known user names and passwords.
 	 * TODO: remove after connecting to a real authentication system.
 	 */
 	private static final String[] DUMMY_CREDENTIALS = new String[] {
-			"hola@kease.com:olakase", "bar@example.com:world" };
+			"nom:pass", "nom:pass" };
 
 	/**
 	 * The default email to populate the email field with.
 	 */
-	public static final String EXTRA_EMAIL = "com.example.android.authenticatordemo.extra.EMAIL";
+	public static final String EXTRA_NAME = "com.example.android.authenticatordemo.extra.NAME";
 
 	/**
 	 * Keep track of the login task to ensure we can cancel it if requested.
@@ -41,11 +41,11 @@ public class LoginActivity extends Activity {
 	private UserLoginTask mAuthTask = null;
 
 	// Values for email and password at the time of the login attempt.
-	private String mEmail;
+	private String name;
 	private String mPassword;
 
 	// UI references.
-	private EditText mEmailView;
+	private EditText nameView;
 	private EditText mPasswordView;
 	private View mLoginFormView;
 	private View mLoginStatusView;
@@ -58,9 +58,9 @@ public class LoginActivity extends Activity {
 		setContentView(R.layout.activity_login);
 
 		// Set up the login form.
-		mEmail = getIntent().getStringExtra(EXTRA_EMAIL);
-		mEmailView = (EditText) findViewById(R.id.email);
-		mEmailView.setText(mEmail);
+		name = getIntent().getStringExtra(EXTRA_NAME);
+		nameView = (EditText) findViewById(R.id.name);
+		nameView.setText(name);
 
 		mPasswordView = (EditText) findViewById(R.id.password);
 		mPasswordView
@@ -85,7 +85,12 @@ public class LoginActivity extends Activity {
 					@Override
 					public void onClick(View view) {
 						// attemptLogin();
+						Toast tSi = Toast.makeText(getApplicationContext(),
+								nameView.getText(), Toast.LENGTH_SHORT);tSi.show();
+								
+					
 						dummyLogin();
+						
 					}
 				});
 	}
@@ -112,11 +117,11 @@ public class LoginActivity extends Activity {
 		}
 
 		// Reset errors.
-		mEmailView.setError(null);
+		nameView.setError(null);
 		mPasswordView.setError(null);
 
 		// Store values at the time of the login attempt.
-		mEmail = mEmailView.getText().toString();
+		name = nameView.getText().toString();
 		mPassword = mPasswordView.getText().toString();
 
 		boolean cancel = false;
@@ -134,13 +139,13 @@ public class LoginActivity extends Activity {
 		}
 
 		// Check for a valid email address.
-		if (TextUtils.isEmpty(mEmail)) {
-			mEmailView.setError(getString(R.string.error_field_required));
-			focusView = mEmailView;
+		if (TextUtils.isEmpty(name)) {
+			nameView.setError(getString(R.string.error_field_required));
+			focusView = nameView;
 			cancel = true;
-		} else if (!mEmail.contains("@")) {
-			mEmailView.setError(getString(R.string.error_invalid_email));
-			focusView = mEmailView;
+		} else if (!name.contains("@")) {
+			nameView.setError(getString(R.string.error_invalid_name));
+			focusView = nameView;
 			cancel = true;
 		}
 
@@ -217,7 +222,7 @@ public class LoginActivity extends Activity {
 
 			for (String credential : DUMMY_CREDENTIALS) {
 				String[] pieces = credential.split(":");
-				if (pieces[0].equals(mEmail)) {
+				if (pieces[0].equals(name)) {
 					// Account exists, return true if the password matches.
 					return pieces[1].equals(mPassword);
 				}

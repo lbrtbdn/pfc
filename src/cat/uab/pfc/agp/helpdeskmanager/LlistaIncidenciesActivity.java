@@ -1,6 +1,7 @@
 package cat.uab.pfc.agp.helpdeskmanager;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -25,6 +26,7 @@ public class LlistaIncidenciesActivity extends Activity {
 
 	private List<Incidencia> getIncidenciesDelServidor() {
 		List<Incidencia> incidencies = new ArrayList<Incidencia>();
+		
 
 		incidencies.add(new Incidencia(Estat.NOVA, "Assumpte 1", new Date(), "tipus 1"));
 		incidencies.add(new Incidencia(Estat.EN_PROGRES, "Assumpte 2", new Date(), "tipus 2"));
