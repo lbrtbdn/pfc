@@ -6,22 +6,22 @@
     tools:context=".DetallIncidenciaActivity" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/detAssumpte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Assumpte de la incidència"
+        android:layout_marginBottom="5dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="5dp"
+        android:text="Assumpte de la incidència"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/detDetalls"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="18dp"
         android:text="DETALLS BÀSICS"
-        android:layout_marginLeft="20dp"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <View
@@ -34,21 +34,21 @@
         android:background="#000000" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/detClient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Client1"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
+        android:text="Client1"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/detCreador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CREADOR"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
+        android:text="CREADOR"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <View
@@ -62,19 +62,19 @@
         android:background="#7F7F7F" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/detTipusSpin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hardware"
         android:layout_marginLeft="20dp"
+        android:text="Hardware"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/detTipus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TIPUS"
         android:layout_marginLeft="20dp"
+        android:text="TIPUS"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <View
@@ -88,12 +88,11 @@
         android:layout_marginBottom="15dp"/>
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/detDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DESCRIPCIÓ"
         android:layout_marginLeft="20dp"
-        
+        android:text="DESCRIPCIÓ"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <View
@@ -106,7 +105,7 @@
         android:background="#000000" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/detDescripcio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -115,12 +114,12 @@
         android:text="BLA BLA BLA" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/detComentari"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="COMENTARIS"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="5dp"
+        android:text="COMENTARIS"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <View
