@@ -3,6 +3,11 @@ package cat.uab.pfc.agp.helpdeskmanager;
 import android.app.Activity;
 import android.os.Bundle;
 
+/**
+ * 
+ * Activity base de la que han d'estendre la resta d'activities
+ *
+ */
 public abstract class BaseActivity extends Activity {
 
 	@Override
@@ -13,7 +18,7 @@ public abstract class BaseActivity extends Activity {
 	}
 
 	/**
-	 * Canviar les dades d'una vista. PEr exemple actualitzar els elements que
+	 * Canviar les dades d'una vista. Per exemple actualitzar els elements que
 	 * apareixen a una llista.
 	 */
 	protected abstract void actualitzarViews();
