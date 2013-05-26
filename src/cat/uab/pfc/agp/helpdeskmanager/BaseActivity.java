@@ -13,6 +13,7 @@ public abstract class BaseActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setContentView(obtenirLayoutId());
 		assignarViewsPerId();
 		configurarViews();
 	}
@@ -34,5 +35,11 @@ public abstract class BaseActivity extends Activity {
 	 * un ListView
 	 */
 	protected abstract void configurarViews();
+	
+	/**
+	 * Retorna el id del layout que ha de fer servir l'activity
+	 * @return id del layout que farà servir l'activity (p.ex. R.layout.id_layout)
+	 */
+	protected abstract int obtenirLayoutId();
 
 }
