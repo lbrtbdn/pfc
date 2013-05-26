@@ -5,8 +5,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="16" />
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
 
     <application
         android:allowBackup="true"
@@ -26,6 +26,22 @@
         <activity
             android:name="cat.uab.pfc.agp.helpdeskmanager.LlistaIncidenciesActivity"
             android:label="@string/title_activity_llista_incidencies" >
+        </activity>
+        <activity
+            android:name="cat.uab.pfc.agp.helpdeskmanager.DetallIncidenciaActivity"
+            android:label="@string/title_activity_detall_incidencia" >
+        </activity>
+        <activity
+            android:name="cat.uab.pfc.agp.helpdeskmanager.GuiaActivity"
+            android:label="@string/title_activity_guia" >
+        </activity>
+        <activity
+            android:name="cat.uab.pfc.agp.helpdeskmanager.FAQActivity"
+            android:label="@string/title_activity_faq" >
+        </activity>
+        <activity
+            android:name="cat.uab.pfc.agp.helpdeskmanager.NovaIncidenciaActivity"
+            android:label="@string/title_activity_nova_incidencia" >
         </activity>
     </application>
 

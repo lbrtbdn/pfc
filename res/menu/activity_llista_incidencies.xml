@@ -1,21 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
-		<menu
-			xmlns:android="http://schemas.android.com/apk/res/android">
-			
-			<item android:id="@+id/crearInc" android:title="Nova Incidència">
-			</item><item android:id="@+id/incPen"
-				android:title="Incidències Pendents">
-			</item>
-			<item android:id="@+id/incRes"
-				android:title="Incidències resoltes">
-			</item>
-			<item android:id="@+id/faq" android:title="FAQ">"
-			</item>
-			<item android:id="@+id/guia" android:title="Ajuda"></item>
+    <item
+        android:id="@+id/faq"
+        android:title="FAQ">
+    </item>
+    <item
+        android:id="@+id/guia"
+        android:title="Ajuda">
+    </item>
+    <item
+        android:id="@+id/nova"
+        android:icon="@drawable/new_content"
+        android:showAsAction="ifRoom">
+    </item>
 
-		</menu>
-
-	
-
-
-
+</menu>

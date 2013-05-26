@@ -6,5 +6,9 @@
     <string name="title_activity_holakaseactivity">HelpdeskManager</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_llista_incidencies">LlistaIncidenciesActivity</string>
+    <string name="title_activity_detall_incidencia">DetallIncidenciaActivity</string>
+    <string name="title_activity_guia">GuiaActivity</string>
+    <string name="title_activity_faq">FAQActivity</string>
+    <string name="title_activity_nova_incidencia">NovaIncidenciaActivity</string>
 
 </resources>
