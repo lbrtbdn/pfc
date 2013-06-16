@@ -14,5 +14,7 @@ public interface Servidor {
 	
 	public boolean afegirComentari(long idIncidencia, String nomUsuari, String comentari);
 
+	boolean afegirIncidencia(String assumpte, String tipus);
+
 	
 }

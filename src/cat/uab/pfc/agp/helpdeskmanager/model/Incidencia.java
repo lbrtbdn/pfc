@@ -1,6 +1,8 @@
 package cat.uab.pfc.agp.helpdeskmanager.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Incidencia {
 
@@ -10,6 +12,7 @@ public class Incidencia {
 	private Date data;
 	private String tipus;
 	private String assignat;
+	private List<Comentari> comentaris;
 
 	public Incidencia(long id, Estat estat, String assumpte, Date data,
 			String tipus) {
@@ -19,6 +22,7 @@ public class Incidencia {
 		this.assumpte = assumpte;
 		this.data = data;
 		this.tipus = tipus;
+		this.comentaris = new ArrayList<Comentari>();
 	}
 
 	public long getId() {
@@ -51,6 +55,10 @@ public class Incidencia {
 
 	public void setAssignat(String assignat) {
 		this.assignat = assignat;
+	}
+
+	public List<Comentari> getComentaris() {
+		return comentaris;
 	}
 
 }
