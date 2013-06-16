@@ -9,8 +9,10 @@ public class Incidencia {
 	private String assumpte;
 	private Date data;
 	private String tipus;
+	private String assignat;
 
-	public Incidencia(long id, Estat estat, String assumpte, Date data, String tipus) {
+	public Incidencia(long id, Estat estat, String assumpte, Date data,
+			String tipus) {
 		super();
 		this.id = id;
 		this.estat = estat;
@@ -27,6 +29,10 @@ public class Incidencia {
 		return estat;
 	}
 
+	public void setEstat(Estat estat) {
+		this.estat = estat;
+	}
+
 	public String getAssumpte() {
 		return assumpte;
 	}
@@ -37,6 +43,14 @@ public class Incidencia {
 
 	public String getTipus() {
 		return tipus;
+	}
+
+	public String getAssignat() {
+		return assignat;
+	}
+
+	public void setAssignat(String assignat) {
+		this.assignat = assignat;
 	}
 
 }
