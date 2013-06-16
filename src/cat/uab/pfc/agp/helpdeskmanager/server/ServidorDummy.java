@@ -120,4 +120,17 @@ public class ServidorDummy implements Servidor {
 		return incidencia;
 	}
 
+	@Override
+	public boolean tancarIncidencia(long idIncidencia) {
+		Incidencia incidencia = obtenirIncidenciaPerId(idIncidencia);
+		
+		if (incidencia == null) {
+			return false;
+		}
+
+		incidencia.setEstat(Estat.TANCADA);
+
+		return true;
+	}
+
 }
