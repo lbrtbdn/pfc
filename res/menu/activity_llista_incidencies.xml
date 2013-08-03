@@ -10,6 +10,7 @@
     </item>
     <item
         android:id="@+id/nova"
+        android:title="Nova incidència"
         android:icon="@drawable/new_content"
         android:showAsAction="ifRoom">
     </item>

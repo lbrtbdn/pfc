@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CREADOR"
-        android:textSize="10sp"
+        android:textSize="12sp"
         android:textColor="#8F8F8F"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -71,7 +71,7 @@
         android:id="@+id/detTipus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"        
-        android:textSize="10sp"
+        android:textSize="12sp"
         android:textColor="#8F8F8F"
         android:text="TIPUS"
         android:layout_marginBottom="15dp"

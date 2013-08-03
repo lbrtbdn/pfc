@@ -16,6 +16,8 @@ import android.widget.ListView;
 import cat.uab.pfc.agp.helpdeskmanager.adapter.LlistaIncidenciesAdapter;
 import cat.uab.pfc.agp.helpdeskmanager.model.Estat;
 import cat.uab.pfc.agp.helpdeskmanager.model.Incidencia;
+import cat.uab.pfc.agp.helpdeskmanager.server.Servidor;
+import cat.uab.pfc.agp.helpdeskmanager.server.ServidorDummy;
 
 public class LlistaIncidenciesActivity extends Activity {
 
@@ -51,32 +53,8 @@ public class LlistaIncidenciesActivity extends Activity {
 	}
 
 	private List<Incidencia> getIncidenciesDelServidor() {
-		List<Incidencia> incidencies = new ArrayList<Incidencia>();
-		// TODO llamar a servidor
-		// DummyServidor servidor = new DummysErvidor();
-		// dummy.getIncidencias(usuario);
-		incidencies
-				.add(new Incidencia(
-						1L,
-						Estat.NOVA,
-						"Assumpte 1 Assumpte 1Assumpte 1Assumpte 1Assumpte 1Assumpte 1Assumpte 1Assumpte 1Assumpte 1Assumpte 1Assumpte 1Assumpte 1",
-						new Date(), "tipus 1"));
-		incidencies.add(new Incidencia(1L, Estat.EN_PROGRES, "Assumpte 2", new Date(), "tipus 2"));
-		incidencies.add(new Incidencia(1L, Estat.TANCADA, "Assumpte 3", new Date(), "tipus 3"));
-		incidencies.add(new Incidencia(1L, Estat.EN_PROGRES, "Assumpte 4", new Date(), "tipus 4"));
-		incidencies.add(new Incidencia(1L, Estat.NOVA, "Assumpte 5", new Date(), "tipus 5"));
-		incidencies.add(new Incidencia(1L, Estat.NOVA, "Assumpte 1", new Date(), "tipus 1"));
-		incidencies.add(new Incidencia(1L, Estat.EN_PROGRES, "Assumpte 2", new Date(), "tipus 2"));
-		incidencies.add(new Incidencia(1L, Estat.TANCADA, "Assumpte 3", new Date(), "tipus 3"));
-		incidencies.add(new Incidencia(1L, Estat.EN_PROGRES, "Assumpte 4", new Date(), "tipus 4"));
-		incidencies.add(new Incidencia(1L, Estat.NOVA, "Assumpte 5", new Date(), "tipus 5"));
-		incidencies.add(new Incidencia(1L, Estat.NOVA, "Assumpte 1", new Date(), "tipus 1"));
-		incidencies.add(new Incidencia(1L, Estat.EN_PROGRES, "Assumpte 2", new Date(), "tipus 2"));
-		incidencies.add(new Incidencia(1L, Estat.TANCADA, "Assumpte 3", new Date(), "tipus 3"));
-		incidencies.add(new Incidencia(1L, Estat.EN_PROGRES, "Assumpte 4", new Date(), "tipus 4"));
-		incidencies.add(new Incidencia(1L, Estat.NOVA, "Assumpte 5", new Date(), "tipus 5"));
-		incidencies.add(new Incidencia(1L, Estat.NOVA, "Assumpte 1", new Date(), "tipus 1"));
-
+		Servidor dummy = new ServidorDummy();
+		List<Incidencia> incidencies = dummy.obtenirIncidencies();
 		return incidencies;
 	}
 
