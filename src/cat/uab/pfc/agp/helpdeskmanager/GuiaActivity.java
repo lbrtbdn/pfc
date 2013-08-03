@@ -10,6 +10,7 @@ public class GuiaActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_guia);
+		getActionBar().setTitle("Guia");
 	}
 
 	@Override

@@ -1,9 +1,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
-
-    <item
-        android:id="@+id/menu_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/menu_settings"/>
+    <item android:id="@+id/canvi"
+        android:icon="@drawable/device_access_storage"
+        android:showAsAction="ifRoom" 
+        android:title="Canviar estat">      
+    </item>
+    <item android:id="@+id/coment"
+        android:icon="@drawable/content_new_event"
+        android:showAsAction="ifRoom"
+         android:title="Afegir Comentari">    
+    </item>
 
 </menu>

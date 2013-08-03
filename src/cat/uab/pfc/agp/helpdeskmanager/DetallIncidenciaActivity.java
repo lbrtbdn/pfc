@@ -16,8 +16,11 @@ public class DetallIncidenciaActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_detall_incidencia);
-
 		obternirIPintarIncidencia();
+		getActionBar().setTitle("Detall incidència");
+		
+		
+		
 	}
 
 	private void obternirIPintarIncidencia() {
@@ -33,7 +36,6 @@ public class DetallIncidenciaActivity extends Activity {
 
 	private void pintarIncidencia(Incidencia incidencia) {
 		// TODO Auto-generated method stub
-		
 	}
 
 	private Incidencia obtenirIncidenciaPerId(long id) {

@@ -10,5 +10,6 @@
     <string name="title_activity_guia">GuiaActivity</string>
     <string name="title_activity_faq">FAQActivity</string>
     <string name="title_activity_nova_incidencia">NovaIncidenciaActivity</string>
+    <string name="title_activity_prueba">PruebaActivity</string>
 
 </resources>

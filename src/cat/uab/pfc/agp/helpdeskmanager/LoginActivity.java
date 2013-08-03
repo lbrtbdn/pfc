@@ -54,7 +54,7 @@ public class LoginActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		getActionBar().setTitle("HelpDesk Manager");
 		setContentView(R.layout.activity_login);
 
 		// Set up the login form.
@@ -84,17 +84,19 @@ public class LoginActivity extends Activity {
 		findViewById(R.id.sign_in_button).setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				// attemptLogin();
-				Toast tSi = Toast.makeText(getApplicationContext(), nameView.getText(), Toast.LENGTH_SHORT);
-				tSi.show();
-				
-				if (nameView.getText().toString().equals("HelpDesk")
-						& (mPasswordView.getText().toString().equals("1234"))) {
-					dummyLogin();
-				}else if (nameView.getText().toString().equals("Client")
-						& (mPasswordView.getText().toString().equals("1234"))){
-					dummyLogin();
-				}
+				// TODO llamar a servidor
+				dummyLogin();
+//				// attemptLogin();
+//				Toast tSi = Toast.makeText(getApplicationContext(), nameView.getText(), Toast.LENGTH_SHORT);
+//				tSi.show();
+//				
+//				if (nameView.getText().toString().equals("HelpDesk")
+//						& (mPasswordView.getText().toString().equals("1234"))) {
+//					dummyLogin();
+//				}else if (nameView.getText().toString().equals("Client")
+//						& (mPasswordView.getText().toString().equals("1234"))){
+//					dummyLogin();
+//				}
 				
 			}
 		});

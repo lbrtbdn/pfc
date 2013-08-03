@@ -24,6 +24,7 @@ public class LlistaIncidenciesActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_llista_incidencies);
 		configurarListView();
+		getActionBar().setTitle("Llista incidències");
 	}
 
 	private void configurarListView() {
@@ -51,8 +52,15 @@ public class LlistaIncidenciesActivity extends Activity {
 
 	private List<Incidencia> getIncidenciesDelServidor() {
 		List<Incidencia> incidencies = new ArrayList<Incidencia>();
-
-		incidencies.add(new Incidencia(1L, Estat.NOVA, "Assumpte 1", new Date(), "tipus 1"));
+		// TODO llamar a servidor
+		// DummyServidor servidor = new DummysErvidor();
+		// dummy.getIncidencias(usuario);
+		incidencies
+				.add(new Incidencia(
+						1L,
+						Estat.NOVA,
+						"Assumpte 1 Assumpte 1Assumpte 1Assumpte 1Assumpte 1Assumpte 1Assumpte 1Assumpte 1Assumpte 1Assumpte 1Assumpte 1Assumpte 1",
+						new Date(), "tipus 1"));
 		incidencies.add(new Incidencia(1L, Estat.EN_PROGRES, "Assumpte 2", new Date(), "tipus 2"));
 		incidencies.add(new Incidencia(1L, Estat.TANCADA, "Assumpte 3", new Date(), "tipus 3"));
 		incidencies.add(new Incidencia(1L, Estat.EN_PROGRES, "Assumpte 4", new Date(), "tipus 4"));
@@ -78,37 +86,38 @@ public class LlistaIncidenciesActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_llista_incidencies, menu);
 		return true;
 	}
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-	    // Handle item selection
-	    switch (item.getItemId()) {
-	        case R.id.faq:
-	            obrirFAQActivity();
-	            return true;
-	        case R.id.guia:
-	            obrirGuiaActivity();
-	            return true;
-	        case R.id.nova:
-	        	obrirNovaIncidenciaActivity();
-	        	return true;
-	        default:
-	            return super.onOptionsItemSelected(item);
-	    }
+		// Handle item selection
+		switch (item.getItemId()) {
+		case R.id.faq:
+			obrirFAQActivity();
+			return true;
+		case R.id.guia:
+			obrirGuiaActivity();
+			return true;
+		case R.id.nova:
+			obrirNovaIncidenciaActivity();
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
 
 	private void obrirNovaIncidenciaActivity() {
 		Intent intent = new Intent(LlistaIncidenciesActivity.this, NovaIncidenciaActivity.class);
-		startActivity(intent);		
+		startActivity(intent);
 	}
 
 	private void obrirGuiaActivity() {
 		Intent intent = new Intent(LlistaIncidenciesActivity.this, GuiaActivity.class);
-		startActivity(intent);		
+		startActivity(intent);
 	}
 
 	private void obrirFAQActivity() {
 		Intent intent = new Intent(LlistaIncidenciesActivity.this, FAQActivity.class);
-		startActivity(intent);		
+		startActivity(intent);
 	}
 
 }
