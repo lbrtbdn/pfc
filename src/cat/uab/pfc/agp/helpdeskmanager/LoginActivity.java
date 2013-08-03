@@ -1,6 +1,9 @@
 package cat.uab.pfc.agp.helpdeskmanager;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -39,7 +42,20 @@ public class LoginActivity extends Activity {
 				if (successfulLogin) {
 					startActivity(new Intent(LoginActivity.this, LlistaIncidenciesActivity.class));
 				} else {
-					// TODO Mostrar un alert de login incorrecte
+					
+					AlertDialog.Builder alertLogin = new AlertDialog.Builder(LoginActivity.this);
+					alertLogin.setTitle("Error")
+						.setMessage("Las credencials no son correctes.")
+						.setCancelable(false)
+						.setNeutralButton("Acceptar", new DialogInterface.OnClickListener() {
+		                    public void onClick(DialogInterface dialog, int id) {
+		                        dialog.cancel();
+		                    }
+		                });
+						AlertDialog alert = alertLogin.create();
+						alertLogin.show();
+					
+					
 				}
 
 			}

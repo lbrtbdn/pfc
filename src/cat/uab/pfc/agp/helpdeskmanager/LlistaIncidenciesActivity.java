@@ -41,7 +41,6 @@ public class LlistaIncidenciesActivity extends Activity {
 			}
 
 			private void obrirDetallDeIncidencia(int position) {
-				// TODO Auto-generated method stub
 				Incidencia incidencia = incidencies.get(position);
 				long id = incidencia.getId();
 				Intent intent = new Intent(LlistaIncidenciesActivity.this, DetallIncidenciaActivity.class);
