@@ -40,6 +40,9 @@ public class LoginActivity extends Activity {
 				String contrasenya = mPasswordView.getText().toString();
 				boolean successfulLogin = dummy.login(nomUsuari, contrasenya);
 				if (successfulLogin) {
+					//controller
+					Controller controller = new Controller();
+					controller.guardarUsuari(LoginActivity.this, nomUsuari);
 					startActivity(new Intent(LoginActivity.this, LlistaIncidenciesActivity.class));
 				} else {
 					

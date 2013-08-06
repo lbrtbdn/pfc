@@ -87,7 +87,7 @@ public class DetallIncidenciaActivity extends Activity {
 		           .setPositiveButton("Afegir", new DialogInterface.OnClickListener() {
 		               public void onClick(DialogInterface dialog, int id) {
 		                   Servidor dummy = new ServidorDummy();
-		                   //TODO 
+		                   //TODO  falta nom usuari
 		                   // succesfulInsert = dummy.afegirComentari(incidencia.getId(), nomUsuari, R.id.afegir_comentari);
 		               }
 		           })
