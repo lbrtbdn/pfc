@@ -4,14 +4,13 @@ import java.util.Date;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.RadioButton;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import cat.uab.pfc.agp.helpdeskmanager.model.Estat;
 import cat.uab.pfc.agp.helpdeskmanager.model.Incidencia;
@@ -22,13 +21,20 @@ public class DetallIncidenciaActivity extends Activity {
 
 	public final static String PARAM_INDICENCIA_ID = "incidencia_id";
 	private Incidencia incidencia;
-
 	
+	TextView clientValor;
+	TextView tipusValor;
+	TextView comentariValor;
+
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_detall_incidencia);
 		obternirIPintarIncidencia();
 		getActionBar().setTitle("Detall incidència");
+		
+		clientValor = (TextView) findViewById(R.id.detClient);
+		tipusValor = (TextView) findViewById(R.id.detTipusSpin);
+		comentariValor = (TextView) findViewById(R.id.detDescripcio);
 		
 		
 	}
@@ -46,17 +52,30 @@ public class DetallIncidenciaActivity extends Activity {
 
 	private void pintarIncidencia(Incidencia incidencia) {
 		// TODO Auto-generated method stub
+		//clientValor.setText(incidencia.getCreador());
+		tipusValor.setText(incidencia.getTipus());
+		// comentariValor.setText(incidencia.getComentaris());
+		
 	}
 
 	private Incidencia obtenirIncidenciaPerId(long id) {
 		// TODO Aquest metode crida a servidor per obtenir la incidencia. El que
 		// hi ha aqui es dummy
-		return new Incidencia(id, Estat.NOVA, "Assumpte", new Date(), "Hardware");
+		return new Incidencia(id, "Client 1", Estat.NOVA, "Assumpte", new Date(), "Hardware");
 	}
 
 	private void mostrarNoEsPotTrobarIncidencia() {
 		// TODO Auto-generated method stub
-
+		AlertDialog.Builder alertLogin = new AlertDialog.Builder(DetallIncidenciaActivity.this);
+		alertLogin.setTitle("Error")
+			.setMessage("No s'ha trobat la incidència.")
+			.setCancelable(false)
+			.setNeutralButton("Acceptar", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    dialog.cancel();
+                }
+            });
+			alertLogin.show();
 	}
 
 	@Override
@@ -65,40 +84,46 @@ public class DetallIncidenciaActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_detall_incidencia, menu);
 		return true;
 	}
-	
+
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		if (item.getItemId() == R.id.canvi){
-				CharSequence[] estats = {"Nova", "Pendent", "Resolta"};
-			    AlertDialog.Builder builder = new AlertDialog.Builder(DetallIncidenciaActivity.this);
-			    builder.setTitle("Escull l'estat");
-			    builder.setItems(estats, new DialogInterface.OnClickListener() {
-			               public void onClick(DialogInterface dialog, int which) {
-			               // The 'which' argument contains the index position
-			               // of the selected item
-			           }
-			    });
-			    builder.create().show();
-		}
-		if (item.getItemId() == R.id.coment){
+		if (item.getItemId() == R.id.canvi) {
+			CharSequence[] estats = { "Nova", "Pendent", "Resolta" };
 			AlertDialog.Builder builder = new AlertDialog.Builder(DetallIncidenciaActivity.this);
-		    LayoutInflater inflater = this.getLayoutInflater();
-		    builder.setView(inflater.inflate(R.layout.afegir_comentari, null))
-		           .setPositiveButton("Afegir", new DialogInterface.OnClickListener() {
-		               public void onClick(DialogInterface dialog, int id) {
-		                   Servidor dummy = new ServidorDummy();
-		                   //TODO  falta nom usuari
-		                   // succesfulInsert = dummy.afegirComentari(incidencia.getId(), nomUsuari, R.id.afegir_comentari);
-		               }
-		           })
-		           .setNegativeButton("Cancel·lar", new DialogInterface.OnClickListener() {
-		               public void onClick(DialogInterface dialog, int id) {
-		                   dialog.dismiss();
-		               }
-		           });      
-		    	builder.create().show();
+			builder.setTitle("Escull l'estat");
+			builder.setItems(estats, new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog, int which) {
+					// The 'which' argument contains the index position
+					// of the selected item
+				}
+			});
+			builder.create().show();
+		}
+		if (item.getItemId() == R.id.coment) {
+			final EditText afeCom = new EditText(this);
+			AlertDialog.Builder builder = new AlertDialog.Builder(DetallIncidenciaActivity.this);
+			builder.setTitle("Introdueix el teu comentari");
+			LayoutInflater inflater = this.getLayoutInflater();
+			builder.setView(inflater.inflate(R.layout.afegir_comentari, null))
+					.setPositiveButton("Afegir", new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int id) {
+							Servidor dummy = new ServidorDummy();
+							Controller controller = new Controller();
+							String nomUsuari = controller.recuperarUsuari(DetallIncidenciaActivity.this);
+							String comentari = afeCom.getText().toString();
+							boolean comentariAfegit = dummy.afegirComentari(incidencia.getId(), nomUsuari, comentari);
+							if (comentariAfegit){
+								Toast.makeText(DetallIncidenciaActivity.this, "Comentari afegit correctament", Toast.LENGTH_LONG).show();
+							}
+						}
+					}).setNegativeButton("Cancel·lar", new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int id) {
+							dialog.dismiss();
+						}
+					});
+			builder.create().show();
 		}
 		return true;
 	}
-	
+
 }
