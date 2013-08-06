@@ -4,15 +4,11 @@ import java.util.Date;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.RadioButton;
-import android.widget.Toast;
 import cat.uab.pfc.agp.helpdeskmanager.model.Estat;
 import cat.uab.pfc.agp.helpdeskmanager.model.Incidencia;
 import cat.uab.pfc.agp.helpdeskmanager.server.Servidor;
@@ -51,7 +47,7 @@ public class DetallIncidenciaActivity extends Activity {
 	private Incidencia obtenirIncidenciaPerId(long id) {
 		// TODO Aquest metode crida a servidor per obtenir la incidencia. El que
 		// hi ha aqui es dummy
-		return new Incidencia(id, Estat.NOVA, "Assumpte", new Date(), "Hardware");
+		return new Incidencia(id, "Client 1", Estat.NOVA, "Assumpte", new Date(), "Hardware");
 	}
 
 	private void mostrarNoEsPotTrobarIncidencia() {
@@ -87,7 +83,7 @@ public class DetallIncidenciaActivity extends Activity {
 		           .setPositiveButton("Afegir", new DialogInterface.OnClickListener() {
 		               public void onClick(DialogInterface dialog, int id) {
 		                   Servidor dummy = new ServidorDummy();
-		                   //TODO 
+		                   //TODO  falta nom usuari
 		                   // succesfulInsert = dummy.afegirComentari(incidencia.getId(), nomUsuari, R.id.afegir_comentari);
 		               }
 		           })

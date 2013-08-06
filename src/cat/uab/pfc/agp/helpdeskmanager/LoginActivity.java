@@ -2,7 +2,6 @@ package cat.uab.pfc.agp.helpdeskmanager;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -40,6 +39,9 @@ public class LoginActivity extends Activity {
 				String contrasenya = mPasswordView.getText().toString();
 				boolean successfulLogin = dummy.login(nomUsuari, contrasenya);
 				if (successfulLogin) {
+					//controller
+					Controller controller = new Controller();
+					controller.guardarUsuari(LoginActivity.this, nomUsuari);
 					startActivity(new Intent(LoginActivity.this, LlistaIncidenciesActivity.class));
 				} else {
 					
