@@ -17,15 +17,10 @@ import cat.uab.pfc.agp.helpdeskmanager.server.ServidorDummy;
 public class DetallIncidenciaActivity extends Activity {
 
 	public final static String PARAM_INDICENCIA_ID = "incidencia_id";
-
 	private Incidencia incidencia;
-
 	TextView assumpteValor;
-
 	TextView clientValor;
-
 	TextView tipusValor;
-
 	TextView comentariValor;
 
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +30,13 @@ public class DetallIncidenciaActivity extends Activity {
 		clientValor = (TextView) findViewById(R.id.detClient);
 		tipusValor = (TextView) findViewById(R.id.detTipusSpin);
 		comentariValor = (TextView) findViewById(R.id.detDescripcio);
-
+		
 		obternirIPintarIncidencia();
 		getActionBar().setTitle("Detall incidència");
-
+		
+	
+		
+		
 	}
 
 	private void obternirIPintarIncidencia() {
@@ -117,9 +115,8 @@ public class DetallIncidenciaActivity extends Activity {
 							String nomUsuari = controller.recuperarUsuari(DetallIncidenciaActivity.this);
 							String comentari = afeCom.getText().toString();
 							boolean comentariAfegit = dummy.afegirComentari(incidencia.getId(), nomUsuari, comentari);
-							if (comentariAfegit) {
-								Toast.makeText(DetallIncidenciaActivity.this, "Comentari afegit correctament",
-										Toast.LENGTH_LONG).show();
+							if (comentariAfegit){
+								Toast.makeText(DetallIncidenciaActivity.this, "Comentari afegit correctament", Toast.LENGTH_LONG).show();
 							}
 						}
 					}).setNegativeButton("Cancel·lar", new DialogInterface.OnClickListener() {
