@@ -53,7 +53,7 @@ public class ServidorDummy implements Servidor {
 
 		Incidencia incidencia = obtenirIncidenciaPerId(id);
 
-		if (incidencia != null && nomUsuari.equals(USER_HELP_DESK)) {
+		if (incidencia != null && incidencia.getAssignat() == null && nomUsuari.equals(USER_HELP_DESK)) {
 			incidencia.setAssignat(nomUsuari);
 			incidencia.setEstat(Estat.EN_PROGRES);
 		}
