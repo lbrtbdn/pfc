@@ -12,10 +12,9 @@ public interface Servidor {
 
 	public List<Incidencia> obtenirIncidencies();
 
-	public boolean afegirComentari(long idIncidencia, String nomUsuari,
-			String comentari);
+	public boolean afegirComentari(long idIncidencia, String nomUsuari, String comentari);
 
-	boolean afegirIncidencia(String assumpte, String tipus);
+	boolean afegirIncidencia(String creador, String assumpte, String tipus);
 
 	boolean tancarIncidencia(long idIncidencia);
 

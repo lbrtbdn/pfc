@@ -19,23 +19,22 @@ public class ServidorDummy implements Servidor {
 	private List<Incidencia> incidencies;
 
 	public ServidorDummy() {
-
 		incidencies = new ArrayList<Incidencia>();
-		incidencies.add(new Incidencia(1L, Estat.NOVA, "Assumpte 1", new Date(), "tipus 1"));
-		incidencies.add(new Incidencia(2L, Estat.EN_PROGRES, "Assumpte 2", new Date(), "tipus 2"));
-		incidencies.add(new Incidencia(3L, Estat.TANCADA, "Assumpte 3", new Date(), "tipus 3"));
-		incidencies.add(new Incidencia(4L, Estat.EN_PROGRES, "Assumpte 4", new Date(), "tipus 4"));
-		incidencies.add(new Incidencia(5L, Estat.NOVA, "Assumpte 5", new Date(), "tipus 5"));
-		incidencies.add(new Incidencia(6L, Estat.NOVA, "Assumpte 1", new Date(), "tipus 1"));
-		incidencies.add(new Incidencia(7L, Estat.EN_PROGRES, "Assumpte 2", new Date(), "tipus 2"));
-		incidencies.add(new Incidencia(8L, Estat.TANCADA, "Assumpte 3", new Date(), "tipus 3"));
-		incidencies.add(new Incidencia(9L, Estat.EN_PROGRES, "Assumpte 4", new Date(), "tipus 4"));
-		incidencies.add(new Incidencia(10L, Estat.NOVA, "Assumpte 5", new Date(), "tipus 5"));
-		incidencies.add(new Incidencia(11L, Estat.NOVA, "Assumpte 1", new Date(), "tipus 1"));
-		incidencies.add(new Incidencia(12L, Estat.EN_PROGRES, "Assumpte 2", new Date(), "tipus 2"));
-		incidencies.add(new Incidencia(13L, Estat.TANCADA, "Assumpte 3", new Date(), "tipus 3"));
-		incidencies.add(new Incidencia(14L, Estat.EN_PROGRES, "Assumpte 4", new Date(), "tipus 4"));
-		incidencies.add(new Incidencia(15L, Estat.NOVA, "Assumpte 5", new Date(), "tipus 5"));
+		incidencies.add(new Incidencia(1L, "Client 1", Estat.NOVA, "Assumpte 1", new Date(), "tipus 1"));
+		incidencies.add(new Incidencia(2L, "Client 2", Estat.EN_PROGRES, "Assumpte 2", new Date(), "tipus 2"));
+		incidencies.add(new Incidencia(3L, "Client 1", Estat.TANCADA, "Assumpte 3", new Date(), "tipus 3"));
+		incidencies.add(new Incidencia(4L, "Client 2", Estat.EN_PROGRES, "Assumpte 4", new Date(), "tipus 4"));
+		incidencies.add(new Incidencia(5L, "Client 3", Estat.NOVA, "Assumpte 5", new Date(), "tipus 5"));
+		incidencies.add(new Incidencia(6L, "Client 1", Estat.NOVA, "Assumpte 1", new Date(), "tipus 1"));
+		incidencies.add(new Incidencia(7L, "Client 1", Estat.EN_PROGRES, "Assumpte 2", new Date(), "tipus 2"));
+		incidencies.add(new Incidencia(8L, "Client 5", Estat.TANCADA, "Assumpte 3", new Date(), "tipus 3"));
+		incidencies.add(new Incidencia(9L, "Client 1", Estat.EN_PROGRES, "Assumpte 4", new Date(), "tipus 4"));
+		incidencies.add(new Incidencia(10L, "Client 7", Estat.NOVA, "Assumpte 5", new Date(), "tipus 5"));
+		incidencies.add(new Incidencia(11L, "Client 3", Estat.NOVA, "Assumpte 1", new Date(), "tipus 1"));
+		incidencies.add(new Incidencia(12L, "Client 1", Estat.EN_PROGRES, "Assumpte 2", new Date(), "tipus 2"));
+		incidencies.add(new Incidencia(13L, "Client 2", Estat.TANCADA, "Assumpte 3", new Date(), "tipus 3"));
+		incidencies.add(new Incidencia(14L, "Client 4", Estat.EN_PROGRES, "Assumpte 4", new Date(), "tipus 4"));
+		incidencies.add(new Incidencia(15L, "Client 8", Estat.NOVA, "Assumpte 5", new Date(), "tipus 5"));
 
 	}
 
@@ -90,13 +89,13 @@ public class ServidorDummy implements Servidor {
 	}
 
 	@Override
-	public boolean afegirIncidencia(String assumpte, String tipus) {
+	public boolean afegirIncidencia(String creador, String assumpte, String tipus) {
 
 		long id = incidencies.size();
 		Estat estat = Estat.NOVA;
 		Date data = new Date();
 
-		Incidencia incidencia = new Incidencia(id, estat, assumpte, data, tipus);
+		Incidencia incidencia = new Incidencia(id, creador, estat, assumpte, data, tipus);
 
 		incidencies.add(incidencia);
 

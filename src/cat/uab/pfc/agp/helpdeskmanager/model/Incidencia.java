@@ -11,13 +11,15 @@ public class Incidencia {
 	private String assumpte;
 	private Date data;
 	private String tipus;
+	private String creador;
 	private String assignat;
 	private List<Comentari> comentaris;
 
-	public Incidencia(long id, Estat estat, String assumpte, Date data,
+	public Incidencia(long id, String creador, Estat estat, String assumpte, Date data,
 			String tipus) {
 		super();
 		this.id = id;
+		this.creador = creador;
 		this.estat = estat;
 		this.assumpte = assumpte;
 		this.data = data;
@@ -27,6 +29,10 @@ public class Incidencia {
 
 	public long getId() {
 		return id;
+	}
+	
+	public String getCreador() {
+		return creador;
 	}
 
 	public Estat getEstat() {
