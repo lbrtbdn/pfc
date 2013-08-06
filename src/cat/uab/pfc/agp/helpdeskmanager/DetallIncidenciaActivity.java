@@ -21,7 +21,7 @@ public class DetallIncidenciaActivity extends Activity {
 
 	public final static String PARAM_INDICENCIA_ID = "incidencia_id";
 	private Incidencia incidencia;
-	
+	TextView assumpteValor;
 	TextView clientValor;
 	TextView tipusValor;
 	TextView comentariValor;
@@ -29,12 +29,15 @@ public class DetallIncidenciaActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_detall_incidencia);
-		obternirIPintarIncidencia();
-		getActionBar().setTitle("Detall incidència");
-		
+		assumpteValor = (TextView) findViewById(R.id.detAssumpte);
 		clientValor = (TextView) findViewById(R.id.detClient);
 		tipusValor = (TextView) findViewById(R.id.detTipusSpin);
 		comentariValor = (TextView) findViewById(R.id.detDescripcio);
+		
+		obternirIPintarIncidencia();
+		getActionBar().setTitle("Detall incidència");
+		
+	
 		
 		
 	}
@@ -52,7 +55,8 @@ public class DetallIncidenciaActivity extends Activity {
 
 	private void pintarIncidencia(Incidencia incidencia) {
 		// TODO Auto-generated method stub
-		//clientValor.setText(incidencia.getCreador());
+		assumpteValor.setText(incidencia.getAssumpte());
+		clientValor.setText(incidencia.getCreador());
 		tipusValor.setText(incidencia.getTipus());
 		// comentariValor.setText(incidencia.getComentaris());
 		
