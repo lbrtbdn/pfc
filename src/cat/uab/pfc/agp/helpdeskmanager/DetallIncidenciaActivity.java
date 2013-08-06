@@ -1,7 +1,5 @@
 package cat.uab.pfc.agp.helpdeskmanager;
 
-import java.util.Date;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -12,7 +10,6 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import cat.uab.pfc.agp.helpdeskmanager.model.Estat;
 import cat.uab.pfc.agp.helpdeskmanager.model.Incidencia;
 import cat.uab.pfc.agp.helpdeskmanager.server.Servidor;
 import cat.uab.pfc.agp.helpdeskmanager.server.ServidorDummy;
@@ -20,10 +17,13 @@ import cat.uab.pfc.agp.helpdeskmanager.server.ServidorDummy;
 public class DetallIncidenciaActivity extends Activity {
 
 	public final static String PARAM_INDICENCIA_ID = "incidencia_id";
+
 	private Incidencia incidencia;
-	
+
 	TextView clientValor;
+
 	TextView tipusValor;
+
 	TextView comentariValor;
 
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +31,11 @@ public class DetallIncidenciaActivity extends Activity {
 		setContentView(R.layout.activity_detall_incidencia);
 		obternirIPintarIncidencia();
 		getActionBar().setTitle("Detall incidència");
-		
+
 		clientValor = (TextView) findViewById(R.id.detClient);
 		tipusValor = (TextView) findViewById(R.id.detTipusSpin);
 		comentariValor = (TextView) findViewById(R.id.detDescripcio);
-		
-		
+
 	}
 
 	private void obternirIPintarIncidencia() {
@@ -52,30 +51,32 @@ public class DetallIncidenciaActivity extends Activity {
 
 	private void pintarIncidencia(Incidencia incidencia) {
 		// TODO Auto-generated method stub
-		//clientValor.setText(incidencia.getCreador());
+		// clientValor.setText(incidencia.getCreador());
 		tipusValor.setText(incidencia.getTipus());
 		// comentariValor.setText(incidencia.getComentaris());
-		
+
 	}
 
 	private Incidencia obtenirIncidenciaPerId(long id) {
-		// TODO Aquest metode crida a servidor per obtenir la incidencia. El que
-		// hi ha aqui es dummy
-		return new Incidencia(id, "Client 1", Estat.NOVA, "Assumpte", new Date(), "Hardware");
+		Controller controller = new Controller();
+		String nomUsuari = controller.recuperarUsuari(this);
+
+		Servidor servidor = new ServidorDummy();
+		Incidencia incidencia = servidor.obtenirIncidencia(nomUsuari, id);
+
+		return incidencia;
 	}
 
 	private void mostrarNoEsPotTrobarIncidencia() {
 		// TODO Auto-generated method stub
 		AlertDialog.Builder alertLogin = new AlertDialog.Builder(DetallIncidenciaActivity.this);
-		alertLogin.setTitle("Error")
-			.setMessage("No s'ha trobat la incidència.")
-			.setCancelable(false)
-			.setNeutralButton("Acceptar", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    dialog.cancel();
-                }
-            });
-			alertLogin.show();
+		alertLogin.setTitle("Error").setMessage("No s'ha trobat la incidència.").setCancelable(false)
+				.setNeutralButton("Acceptar", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int id) {
+						dialog.cancel();
+					}
+				});
+		alertLogin.show();
 	}
 
 	@Override
@@ -112,8 +113,9 @@ public class DetallIncidenciaActivity extends Activity {
 							String nomUsuari = controller.recuperarUsuari(DetallIncidenciaActivity.this);
 							String comentari = afeCom.getText().toString();
 							boolean comentariAfegit = dummy.afegirComentari(incidencia.getId(), nomUsuari, comentari);
-							if (comentariAfegit){
-								Toast.makeText(DetallIncidenciaActivity.this, "Comentari afegit correctament", Toast.LENGTH_LONG).show();
+							if (comentariAfegit) {
+								Toast.makeText(DetallIncidenciaActivity.this, "Comentari afegit correctament",
+										Toast.LENGTH_LONG).show();
 							}
 						}
 					}).setNegativeButton("Cancel·lar", new DialogInterface.OnClickListener() {
