@@ -11,8 +11,11 @@ import cat.uab.pfc.agp.helpdeskmanager.model.Incidencia;
 public class ServidorDummy implements Servidor {
 
 	private static final String PASSWORD = "1234";
+
 	private static final String USER_CLIENT = "Client";
+
 	private static final String USER_HELP_DESK = "HelpDesk";
+
 	private List<Incidencia> incidencies;
 
 	public ServidorDummy() {
@@ -70,6 +73,12 @@ public class ServidorDummy implements Servidor {
 		Incidencia incidencia = obtenirIncidenciaPerId(idIncidencia);
 
 		if (incidencia == null) {
+			return false;
+		}
+		if (nomUsuari == null) {
+			return false;
+		}
+		if (comentari == null) {
 			return false;
 		}
 
