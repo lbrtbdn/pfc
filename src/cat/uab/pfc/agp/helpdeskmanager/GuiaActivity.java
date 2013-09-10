@@ -14,7 +14,7 @@ public class GuiaActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_guia);
 		getActionBar().setTitle("Guia");
-		mWebView = (WebView) findViewById(R.id.webFAQ);
+		mWebView = (WebView) findViewById(R.id.webGuia);
 		mWebView.getSettings().setJavaScriptEnabled(true);
 		mWebView.loadUrl("file:///android_asset/Guia.html");
 	}

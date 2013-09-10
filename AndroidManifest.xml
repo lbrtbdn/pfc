@@ -29,15 +29,15 @@
         </activity>
         <activity
             android:name="cat.uab.pfc.agp.helpdeskmanager.DetallIncidenciaActivity"
-            android:label="@string/title_activity_detall_incidencia" 
+            android:label="@string/title_activity_detall_incidencia"
             android:parentActivityName="cat.uab.pfc.agp.helpdeskmanager.LlistaIncidenciesActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cat.uab.pfc.agp.helpdeskmanager.LlistaIncidenciesActivity" />>
+                android:value="cat.uab.pfc.agp.helpdeskmanager.LlistaIncidenciesActivity" />
         </activity>
         <activity
             android:name="cat.uab.pfc.agp.helpdeskmanager.GuiaActivity"
-            android:label="@string/title_activity_guia" 
+            android:label="@string/title_activity_guia"
             android:parentActivityName="cat.uab.pfc.agp.helpdeskmanager.LlistaIncidenciesActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -45,17 +45,16 @@
         </activity>
         <activity
             android:name="cat.uab.pfc.agp.helpdeskmanager.FAQActivity"
-            android:label="@string/title_activity_faq" 
+            android:label="@string/title_activity_faq"
             android:parentActivityName="cat.uab.pfc.agp.helpdeskmanager.LlistaIncidenciesActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cat.uab.pfc.agp.helpdeskmanager.LlistaIncidenciesActivity" />>
+                android:value="cat.uab.pfc.agp.helpdeskmanager.LlistaIncidenciesActivity" />
         </activity>
         <activity
             android:name="cat.uab.pfc.agp.helpdeskmanager.NovaIncidenciaActivity"
             android:label="@string/title_activity_nova_incidencia" >
         </activity>
-
     </application>
 
 </manifest>

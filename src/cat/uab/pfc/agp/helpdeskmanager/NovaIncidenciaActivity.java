@@ -9,16 +9,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class NovaIncidenciaActivity extends Activity {
 
+	TextView crearValor;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_nova_incidencia);
 		spinnerCreate();
 		getActionBar().hide();
+		Controller controller = new Controller();
+		String nomCreador = controller.recuperarUsuari(NovaIncidenciaActivity.this);
+		crearValor = (TextView) findViewById(R.id.editClient);
+		crearValor.setText(nomCreador);
 		// Botó CANCEL·LAR
 		findViewById(R.id.bCan).setOnClickListener(new View.OnClickListener() {
 

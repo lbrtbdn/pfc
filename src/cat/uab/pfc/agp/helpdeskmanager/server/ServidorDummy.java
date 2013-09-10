@@ -20,21 +20,21 @@ public class ServidorDummy implements Servidor {
 
 	public ServidorDummy() {
 		incidencies = new ArrayList<Incidencia>();
-		incidencies.add(new Incidencia(1L, "Client 1", Estat.NOVA, "Assumpte 1", new Date(), "tipus 1"));
-		incidencies.add(new Incidencia(2L, "Client 2", Estat.EN_PROGRES, "Assumpte 2", new Date(), "tipus 2"));
-		incidencies.add(new Incidencia(3L, "Client 1", Estat.TANCADA, "Assumpte 3", new Date(), "tipus 3"));
-		incidencies.add(new Incidencia(4L, "Client 2", Estat.EN_PROGRES, "Assumpte 4", new Date(), "tipus 4"));
-		incidencies.add(new Incidencia(5L, "Client 3", Estat.NOVA, "Assumpte 5", new Date(), "tipus 5"));
-		incidencies.add(new Incidencia(6L, "Client 1", Estat.NOVA, "Assumpte 1", new Date(), "tipus 1"));
-		incidencies.add(new Incidencia(7L, "Client 1", Estat.EN_PROGRES, "Assumpte 2", new Date(), "tipus 2"));
-		incidencies.add(new Incidencia(8L, "Client 5", Estat.TANCADA, "Assumpte 3", new Date(), "tipus 3"));
-		incidencies.add(new Incidencia(9L, "Client 1", Estat.EN_PROGRES, "Assumpte 4", new Date(), "tipus 4"));
-		incidencies.add(new Incidencia(10L, "Client 7", Estat.NOVA, "Assumpte 5", new Date(), "tipus 5"));
-		incidencies.add(new Incidencia(11L, "Client 3", Estat.NOVA, "Assumpte 1", new Date(), "tipus 1"));
-		incidencies.add(new Incidencia(12L, "Client 1", Estat.EN_PROGRES, "Assumpte 2", new Date(), "tipus 2"));
-		incidencies.add(new Incidencia(13L, "Client 2", Estat.TANCADA, "Assumpte 3", new Date(), "tipus 3"));
-		incidencies.add(new Incidencia(14L, "Client 4", Estat.EN_PROGRES, "Assumpte 4", new Date(), "tipus 4"));
-		incidencies.add(new Incidencia(15L, "Client 8", Estat.NOVA, "Assumpte 5", new Date(), "tipus 5"));
+		incidencies.add(new Incidencia(1L, "Client 1", Estat.NOVA, "Assumpte 1", new Date(), "Hardware"));
+		incidencies.add(new Incidencia(2L, "Client 2", Estat.EN_PROGRES, "Assumpte 2", new Date(), "Software"));
+		incidencies.add(new Incidencia(3L, "Client 1", Estat.TANCADA, "Assumpte 3", new Date(), "Hardware"));
+		incidencies.add(new Incidencia(4L, "Client 2", Estat.EN_PROGRES, "Assumpte 4", new Date(), "Software"));
+		incidencies.add(new Incidencia(5L, "Client 3", Estat.NOVA, "Assumpte 5", new Date(), "Hardware"));
+		incidencies.add(new Incidencia(6L, "Client 1", Estat.NOVA, "Assumpte 1", new Date(), "Software"));
+		incidencies.add(new Incidencia(7L, "Client 1", Estat.EN_PROGRES, "Assumpte 2", new Date(), "Hardware"));
+		incidencies.add(new Incidencia(8L, "Client 5", Estat.TANCADA, "Assumpte 3", new Date(), "Software"));
+		incidencies.add(new Incidencia(9L, "Client 1", Estat.EN_PROGRES, "Assumpte 4", new Date(), "Hardware"));
+		incidencies.add(new Incidencia(10L, "Client 7", Estat.NOVA, "Assumpte 5", new Date(), "Software"));
+		incidencies.add(new Incidencia(11L, "Client 3", Estat.NOVA, "Assumpte 1", new Date(), "Hardware"));
+		incidencies.add(new Incidencia(12L, "Client 1", Estat.EN_PROGRES, "Assumpte 2", new Date(), "Software"));
+		incidencies.add(new Incidencia(13L, "Client 2", Estat.TANCADA, "Assumpte 3", new Date(), "Hardware"));
+		incidencies.add(new Incidencia(14L, "Client 4", Estat.EN_PROGRES, "Assumpte 4", new Date(), "Software"));
+		incidencies.add(new Incidencia(15L, "Client 8", Estat.NOVA, "Assumpte 5", new Date(), "Hardware"));
 
 	}
 

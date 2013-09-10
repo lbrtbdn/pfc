@@ -1,5 +1,6 @@
 package cat.uab.pfc.agp.helpdeskmanager;
 
+import java.io.Closeable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.SyncStateContract.Helpers;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -77,9 +79,17 @@ public class LlistaIncidenciesActivity extends Activity {
 		case R.id.nova:
 			obrirNovaIncidenciaActivity();
 			return true;
+		case R.id.sortir:
+			sortirActivity();
+			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}
+	}
+
+	private void sortirActivity() {
+		LlistaIncidenciesActivity.this.finish();
+		
 	}
 
 	private void obrirNovaIncidenciaActivity() {

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,17 +27,14 @@ public class DetallIncidenciaActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_detall_incidencia);
+		getActionBar().setTitle("Detall incidència");
 		assumpteValor = (TextView) findViewById(R.id.detAssumpte);
 		clientValor = (TextView) findViewById(R.id.detClient);
 		tipusValor = (TextView) findViewById(R.id.detTipusSpin);
 		comentariValor = (TextView) findViewById(R.id.detDescripcio);
-		
+
 		obternirIPintarIncidencia();
-		getActionBar().setTitle("Detall incidència");
-		
-	
-		
-		
+
 	}
 
 	private void obternirIPintarIncidencia() {
@@ -90,7 +88,9 @@ public class DetallIncidenciaActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		if (item.getItemId() == R.id.canvi) {
+		if (item.getItemId() == android.R.id.home) {
+			NavUtils.navigateUpFromSameTask(this);
+		} else if (item.getItemId() == R.id.canvi) {
 			CharSequence[] estats = { "Nova", "Pendent", "Resolta" };
 			AlertDialog.Builder builder = new AlertDialog.Builder(DetallIncidenciaActivity.this);
 			builder.setTitle("Escull l'estat");
@@ -101,8 +101,7 @@ public class DetallIncidenciaActivity extends Activity {
 				}
 			});
 			builder.create().show();
-		}
-		if (item.getItemId() == R.id.coment) {
+		} else if (item.getItemId() == R.id.coment) {
 			final EditText afeCom = new EditText(this);
 			AlertDialog.Builder builder = new AlertDialog.Builder(DetallIncidenciaActivity.this);
 			builder.setTitle("Introdueix el teu comentari");
@@ -115,8 +114,9 @@ public class DetallIncidenciaActivity extends Activity {
 							String nomUsuari = controller.recuperarUsuari(DetallIncidenciaActivity.this);
 							String comentari = afeCom.getText().toString();
 							boolean comentariAfegit = dummy.afegirComentari(incidencia.getId(), nomUsuari, comentari);
-							if (comentariAfegit){
-								Toast.makeText(DetallIncidenciaActivity.this, "Comentari afegit correctament", Toast.LENGTH_LONG).show();
+							if (comentariAfegit) {
+								Toast.makeText(DetallIncidenciaActivity.this, "Comentari afegit correctament",
+										Toast.LENGTH_LONG).show();
 							}
 						}
 					}).setNegativeButton("Cancel·lar", new DialogInterface.OnClickListener() {
@@ -128,5 +128,4 @@ public class DetallIncidenciaActivity extends Activity {
 		}
 		return true;
 	}
-
 }
